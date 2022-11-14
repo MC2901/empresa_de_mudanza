@@ -13,11 +13,33 @@ public class Main {
 
         MedioDeTransporte camionDeLosLunes = new MedioDeTransporte(
                 500.0,
-                new Dimension(3.0, 1.5, 6.0)
+                new Dimension(3.0, 1.5, 6.0),
+                3
         );
 
         camionDeLosLunes.cargar(primerSilla);
         camionDeLosLunes.cargar(primerTelevisor);
+        camionDeLosLunes.cargar(new ObjetoTransportable(
+                "Otra silla",
+                2.0,
+                new Dimension(0.5, 1, 0.5)
+        ));
+        camionDeLosLunes.cargar(new ObjetoTransportable(
+                "Otro televisor",
+                2.0,
+                new Dimension(0.5, 1, 0.5)
+        ));
+        camionDeLosLunes.cargar(new ObjetoTransportable(
+                "Ultimo televisor",
+                2.0,
+                new Dimension(0.5, 1, 0.5)
+        ));
+
+        System.out.println(String.format("En el camion ahora hay %d objetos. %f/%f",
+                camionDeLosLunes.getObjetoTransportables().size(),
+                camionDeLosLunes.getCapacidad(),
+                camionDeLosLunes.getCapacidadMaxima()
+        ));
 
     }
 }

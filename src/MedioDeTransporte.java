@@ -5,12 +5,14 @@ public class MedioDeTransporte {
     private double capacidadMaxima;
     private Dimension dimension;
     private ArrayList<ObjetoTransportable> objetoTransportables;
+    private int cantidadMaxima;
 
-    MedioDeTransporte(double capacidadMaxima, Dimension dimension) {
+    MedioDeTransporte(double capacidadMaxima, Dimension dimension, int cantidadMaxima) {
         setCapacidadMaxima(capacidadMaxima);
         setDimension(dimension);
         setCapacidad(0);
         setObjetoTransportables(new ArrayList<ObjetoTransportable>());
+        setCantidadMaxima(cantidadMaxima);
     }
 
     public double getCapacidad() {
@@ -46,6 +48,16 @@ public class MedioDeTransporte {
     }
 
     public void cargar(ObjetoTransportable objetoTransportable) {
+        if(getObjetoTransportables().size() >= getCantidadMaxima()) return;
+        setCapacidad(getCapacidad() + objetoTransportable.getPeso());
         this.objetoTransportables.add(objetoTransportable);
+    }
+
+    public int getCantidadMaxima() {
+        return cantidadMaxima;
+    }
+
+    public void setCantidadMaxima(int cantidadMaxima) {
+        this.cantidadMaxima = cantidadMaxima;
     }
 }
