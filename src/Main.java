@@ -11,6 +11,12 @@ public class Main {
                 new Dimension(1.5, 1, 0.1)
         );
 
+        ObjetoTransportable motorV8 = new ObjetoTransportable(
+                "motor V8",
+                500.0,
+                new Dimension(1.5, 1, 0.1)
+        );
+
         MedioDeTransporte camionDeLosLunes = new MedioDeTransporte(
                 500.0,
                 new Dimension(3.0, 1.5, 6.0),
@@ -40,6 +46,7 @@ public class Main {
                 camionDeLosLunes.getCapacidad(),
                 camionDeLosLunes.getCapacidadMaxima()
         ));
+        System.out.println(camionDeLosLunes.generarInventario());
 
     }
 }
